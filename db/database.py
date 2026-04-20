@@ -8,7 +8,9 @@ from db.models import Base, recreate_database
 
 class Database:
     def __init__(self):
-        db_path = "D:/claw-агент/claw_agent.db"
+        import os
+base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+db_path = os.path.join(base_dir, "claw_agent.db")
         
         # Check if database exists and has old schema
         if os.path.exists(db_path):
