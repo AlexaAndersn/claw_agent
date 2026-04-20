@@ -68,7 +68,8 @@ class Reminder(Base):
 
 def recreate_database():
     import os
-    db_path = "D:/claw-агент/claw_agent.db"
+base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+db_path = os.path.join(base_dir, "claw_agent.db")
     if os.path.exists(db_path):
         os.remove(db_path)
         print("Database deleted - will be recreated on next start")
